@@ -12,4 +12,19 @@ This is awesome!
 - use a markdown file to store data
 - printed human readable but also editable in file 
 
+## We are and we do
+- Noah 
+	- experienced Jugenhackt participant
+	- project leader
+	- creating add-on extension with jannick
+- Jannic
+	- 4th time at Jugendhackt
+	- creating add-on extension with Noah
+- Janek
+	- 2nd time at Jugenhackt
+	- create Data
+- Lorenz 
+	- 1st time at Jugendhackt
+	- scrape websites
+
 
