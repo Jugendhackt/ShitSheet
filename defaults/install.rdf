@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-RDF-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>shitSheet</em:id>
+
+		<em:name>shitSheet</em:name>
+		<em:version>0.0.1</em:version>
+		<em:type>2</em:type>
+		<em:creator>Janick, Lorenz, Janek, Noah</em:creator>
+
+		<em:description>Creates personalized cheat sheets for things you google way to often</em:description>
+		<em:homepageURL>https://github.com/Jugendhackt/ShitSheet</em:homepageURL>
+		<em:optionsURL>chrome://shitSheet/content/options.xul</em:optionsURL>
+
+		<em:targetApplication>
+
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>3.1b2</em:maxVersion>
+
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>
