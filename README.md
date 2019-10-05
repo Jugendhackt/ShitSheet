@@ -17,7 +17,7 @@ This is awesome!
 	- experienced Jugenhackt participant
 	- project leader
 	- creating add-on extension with jannick
-- Jannic
+- Jannick
 	- 4th time at Jugendhackt
 	- creating add-on extension with Noah
 - Janek
