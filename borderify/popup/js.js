@@ -6,6 +6,9 @@ function getCurrentURL(){
   function onGot(tabsInfo) {
     var tab = tabsInfo[0]
     save(tabsInfo[0])
+    if (localStorage.check == 1){
+      download()
+    }
   }
 
   function onError(error) {
@@ -77,9 +80,28 @@ function download() {
 
   document.body.removeChild(element);
 }
+function check_checkbox(){
+  var c=document.getElementById("check");
+  if (c.checked) {
+    localStorage.check = 1
+  } else {
+    localStorage.check = 0
+  }
+}
+function load_checkbox(){
+  var c=document.getElementById("check")
+    if (localStorage.check == 1){
+      c.checked = true
+    }
+    else{
+      c.checked = false
+    }
+}
 //Autostart
 
 document.getElementById('add_entry').onclick = getCurrentURL;
 document.getElementById('clear').onclick = clear;
 document.getElementById('download').onclick = download;
+document.getElementById('check').onclick = check_checkbox;
 show_list()
+load_checkbox()

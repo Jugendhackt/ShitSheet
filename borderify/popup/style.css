@@ -20,3 +20,45 @@ body {
   background-color: #331010;
   color: #dddddd;
 }
+.toggle label {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 3.5em;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle  .slider {    /* Grundfläche */
+  position: absolute;
+  cursor: pointer;
+  top: 25%;
+  left: 10%;
+  width: 4em;
+  height: 2em;
+  background-color: #c32e04; /* red */
+  border-radius: 1em;
+  transition: all .3s ease-in-out;
+
+}
+
+.toggle  .slider:before {  /* verschiebbarer Button */
+  position: absolute;
+  content: "";
+  height: 1.6em;
+  width: 1.6em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: white;
+  border-radius: 50%;
+  transition: all .3s ease-in-out;
+}
+.toggle input:checked + .slider {
+  background-color: #5a9900; /* green */
+}
+
+.toggle  input:checked + .slider:before {
+  transform: translateX(1.9em);
+}
