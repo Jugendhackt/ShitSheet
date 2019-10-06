@@ -1,0 +1,41 @@
+{
+
+  "manifest_version": 2,
+  "name": "shitSheet",
+  "version": "1.0",
+
+  "description": "Creates personalized cheat sheets for things you search for way to often",
+
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["shitSheet.js"]
+    }
+],
+  "applications": {
+  "gecko": {
+    "id": "shitSheet@rot-blau.com"
+  }
+},
+"permissions": ["tabs"],
+"content_security_policy":"default-src 'self'",
+"browser_action": {
+  "browser_style": true,
+  "default_icon": {
+    "48": "pictures/icon_light_48.png",
+    "96": "pictures/icon_light_96.png"
+  },
+  "default_title": "shitSheet",
+  "default_popup": "popup/shitSheet_popup.html",
+  "theme_icons": [{
+    "light": "pictures/icon_light_48.png",
+    "dark": "pictures/icon_dark_48.png",
+    "size": 48
+  }, {
+    "light": "pictures/icon_light_96.png",
+    "dark": "pictures/icon_dark_96.png",
+    "size": 96
+  }]
+}
+}

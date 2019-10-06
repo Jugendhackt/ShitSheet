@@ -1,0 +1,8 @@
+content     shitSheet    chrome/content/
+content     shitSheet    chrome/content/ contentaccessible=yes
+overlay chrome://browser/content/browser.xul chrome://shitSheet/content/browser.xul
+
+locale	shitSheet	en-US	locale/en-US/
+
+skin	shitSheet	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://shitSheet/skin/skin.css
