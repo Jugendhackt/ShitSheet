@@ -19,26 +19,29 @@ public class HtmlParser {
 //		System.out.println(endIndex);
 		while (divLayer != -1) {
 			endIndex = html.indexOf("div", endIndex + 1);
+			if(endIndex <= 1) {
+				break;
+			}
 			divLayer += html.charAt(endIndex - 1) == "<".charAt(0) ? 1 : -1;
 			//System.out.println(divLayer);
 		}
 //		System.out.println(endIndex);
-		html = "<" + html.substring(startIndex, endIndex - 2);
+		if(startIndex >= 0 && endIndex >= 0) {
+			html = "<" + html.substring(startIndex, endIndex - 2);
+		}else {
+			html = "";
+		}
 		return html;
 	}
 	
-	String parse(URL url) {
+	static String parse(URL url) {
 		
 		String html = "";
 		
 		try {
             // get URL content
 //			System.out.println("https://stackoverflow.com/questions/5956627/python-universal-import\n");
-			BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-		    String a = br1.readLine();
-//            String a="https://stackoverflow.com/questions/5956627/python-universal-import";
-            
-            url = new URL(a);
+		   
             URLConnection conn = url.openConnection();
 
             // open the stream and put it into BufferedReader
@@ -64,39 +67,39 @@ public class HtmlParser {
 	
 	public static void main(String[] args) {
 		
-		URL url;
-		String html = "";
-		
-		try {
-            // get URL content
-//			System.out.println("https://stackoverflow.com/questions/5956627/python-universal-import\n");
-			BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-		    String a = br1.readLine();
-//            String a="https://stackoverflow.com/questions/5956627/python-universal-import";
-            
-            url = new URL(a);
-            URLConnection conn = url.openConnection();
-
-            // open the stream and put it into BufferedReader
-            BufferedReader br = new BufferedReader(
-                               new InputStreamReader(conn.getInputStream()));
-
-            String inputLine;
-            while ((inputLine = br.readLine()) != null) {
-                    html = html + "\n" +  inputLine;
-            }
-            br.close();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		String searchTerm = "class=\"question-hyperlink\"";
-		int a = html.indexOf(">", html.indexOf(searchTerm));
-		String title =  html.substring(a + 1, html.indexOf("<", a));
-//		System.out.println("titel: " + title);
-		
-		System.out.println(getDivContent(getDivContent(html, "class=\"answer accepted-answer\""), "div class=\"post-text\" itemprop=\"text\">"));
+//		URL url;
+//		String html = "";
+//		
+//		try {
+//            // get URL content
+////			System.out.println("https://stackoverflow.com/questions/5956627/python-universal-import\n");
+//			BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
+////		    String a = br1.readLine();
+////            String a="https://stackoverflow.com/questions/5956627/python-universal-import";
+//            
+//            url = new URL(a);
+//            URLConnection conn = url.openConnection();
+//
+//            // open the stream and put it into BufferedReader
+//            BufferedReader br = new BufferedReader(
+//                               new InputStreamReader(conn.getInputStream()));
+//
+//            String inputLine;
+//            while ((inputLine = br.readLine()) != null) {
+//                    html = html + "\n" +  inputLine;
+//            }
+//            br.close();
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//		String searchTerm = "class=\"question-hyperlink\"";
+//		int a = html.indexOf(">", html.indexOf(searchTerm));
+//		String title =  html.substring(a + 1, html.indexOf("<", a));
+////		System.out.println("titel: " + title);
+//		
+//		System.out.println(getDivContent(getDivContent(html, "class=\"answer accepted-answer\""), "div class=\"post-text\" itemprop=\"text\">"));
 	}
 
 }

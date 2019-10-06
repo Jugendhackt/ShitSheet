@@ -1,0 +1,25 @@
+<div align="right"><div align="left">Python: universal import</div><div align="left" style="width:80%;"><div class="post-text" itemprop="text">
+<p>I'm not sure what you mean by "all from numpy", but you should never need to use more than one form of <code>import</code> at a time. They do different things:</p>
+
+<h2>Option One: <code>import</code></h2>
+
+<p><code>import numpy</code> will bring the entire numpy module into the current namespace. You can then reference anything from that moudule as <code>numpy.dot</code> or <code>numpy.linalg.eig</code>.</p>
+
+<h2>Option Two: <code>from ... import *</code></h2>
+
+<p><code>from numpy import *</code> will bring all of the public objects from numpy into the current namespace as local references. If the package contains a list named <code>__all__</code> then this command will also <code>import</code> every sub-module defined in that list. </p>
+
+<p>For numpy this list includes 'linalg', 'fft', 'random', 'ctypeslib', 'ma', and  'doc' last I checked. So, once you've run this command, you can call <code>dot</code> or <code>linalg.eig</code> without the numpy prefix.</p>
+
+<p>If you're looking for an import that will pull every symbol from every submodule in the package into your namespace, then I don't think there is one. You would have to do something like this:</p>
+
+<pre><code>from numpy.linalg import *
+from numpy.fft import *
+from numpy.random import *
+from numpy.ctypeslib import *
+from numpy.ma import *
+from numpy import *
+</code></pre>
+
+<p>which is, I think, what you're trying to avoid.</p>
+    </div><div align="left">Perl .exe file: Can&#39;t call method 
