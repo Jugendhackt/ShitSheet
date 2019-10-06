@@ -1,0 +1,22 @@
+.button {
+  border: none;
+  color: #dddddd;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.eins {
+   background: linear-gradient(to right, #994444 , #996444 );
+}
+.zwei {
+   background: linear-gradient(to right, #996444 , #998444 );
+}
+.drei {
+   background: linear-gradient(to right, #998444 , #999944 );
+}
+body {
+  background-color: #331010;
+  color: #dddddd;
+}
