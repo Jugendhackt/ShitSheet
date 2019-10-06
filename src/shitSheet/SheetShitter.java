@@ -41,13 +41,17 @@ public class SheetShitter {
 				s = s + "<div align=\"left\">" + entry.split("<\\|>")[0] + "</div>" + "<div align=\"left\" style=\"width:80%;\">" + entry.split("<\\|>")[1] + "</div>";
 			}
 			//System.out.println(i + entry.split("\\|")[1]);
-
 			
 		}
+			
+		
 		s = s + "</div>";
+		//s = s.replaceAll("\"", "penis");
+		System.out.println(s);
 		Charset charset = Charset.forName("US-ASCII");
 		try (BufferedWriter writer = Files.newBufferedWriter(shitSheet, charset)) {
 		    writer.write(s, 0, s.length());
+			System.out.println(s.length());
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
