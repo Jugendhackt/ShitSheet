@@ -23,7 +23,7 @@
 "browser_action": {
   "browser_style": true,
   "default_icon": {
-    "96": "pictures/icon_light_48.png",
+    "48": "pictures/icon_light_48.png",
     "96": "pictures/icon_light_96.png"
   },
   "default_title": "shitSheet",
