@@ -1,4 +1,4 @@
-<div align="right"><div align="left">Python: universal import</div><div align="left" style="width:80%;"><div class="post-text" itemprop="text">
+<div align="right" style="background: #0F0F0F; "> <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Python: universal import </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
 <p>I'm not sure what you mean by "all from numpy", but you should never need to use more than one form of <code>import</code> at a time. They do different things:</p>
 
 <h2>Option One: <code>import</code></h2>
@@ -22,4 +22,76 @@ from numpy import *
 </code></pre>
 
 <p>which is, I think, what you're trying to avoid.</p>
-    </div><div align="left">Perl .exe file: Can&#39;t call method 
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Perl .exe file: Can&#39;t call method “encode” on an undefined value </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<p>If you could provide the details how you used the pp utility from PAR::Packer, it might be easier for others to provide assistance.  Without those details, I'm going to assume that you did something like "pp -o test.exe test.pl".</p>
+
+<p>The first thing that I would suggest would be to use the -c and/or -x options.  Those options are used "to determine additonal run-time dependencies".  Keep in mind that those are case-sensitive options.</p>
+
+<p>If that doesn't fix all of the issues, you may need to use additional options.  Check the documentation for the <a href="https://metacpan.org/pod/pp" rel="nofollow">pp</a> utility for more details on the other options.</p>
+
+<p>Also, I noticed that you added the "mojo" tag to your question, so I'm assuming that your code is using Mojolicious.  If that's the case, you may want to check out this <a href="http://blag.nullteilerfrei.de/2013/05/17/building-perl-stand-alone-applications-with-a-gui-using-mojolicious-and-par-packer/" rel="nofollow">blog</a> for some help on creating a stand alone application using Mojolicious.</p>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> How to parse a JSON file without web request or web server? </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<p>Simple, fast, but bad for real project solution:</p>
+
+<ol>
+<li>Rename <code>myfile.json</code> to <code>data.js</code> (name doesn't matter).</li>
+<li>Create a variable in data.js and initialize it with your json
+<code>var myData = {...your json...}</code></li>
+<li>Add <code>&lt;script src="./data.js"&gt;&lt;/script&gt;</code> to your html file.</li>
+<li>Now you can use <code>myData</code> variable from javascript with all data.</li>
+</ol>
+
+<p>This solution is bad because you add a new variable in global scope and browser would still make a http request to get this .js file.</p>
+
+<p>Also, If you want to make ajax requests to your local files, you can use http server. Take a look at very simple node js <a href="https://www.npmjs.com/package/http-server" rel="nofollow">http-server</a>.</p>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Add new keys to a dictionary? </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<pre><code>d = {'key':'value'}
+print(d)
+# {'key': 'value'}
+d['mynewkey'] = 'mynewvalue'
+print(d)
+# {'mynewkey': 'mynewvalue', 'key': 'value'}
+</code></pre>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Browser-based client-side scraping </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<p>No, you won't be able to use the browser of your clients to scrape content from other websites using JavaScript because of a security measure called <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" rel="noreferrer">Same-origin policy</a>.</p>
+
+<p>There should be no way to circumvent this policy and that's for a good reason. Imagine you could instruct the browser of your visitors to do anything on any website. That's not something you want to happen automatically.</p>
+
+<p>However, you could create a browser extension to do that. JavaScript browser extensions can be equipped with more privileges than regular JavaScript.</p>
+
+<p>Adobe Flash has similar security features but I guess you could use Java (not JavaScript) to create a web-scraper that uses your user's IP address. Then again, you probably don't want to do that as Java plugins are considered insecure (and slow to load!) and not all users will even have it installed.</p>
+
+<p>So now back to your problem:</p>
+
+<blockquote>
+  <p>I need to scrape pages of an e-com site but several requests from the server would get me banned.</p>
+</blockquote>
+
+<p>If the owner of that website doesn't want you to use his service in that way, you probably shouldn't do it. Otherwise you would risk legal implications (look <a href="https://stackoverflow.com/questions/14735791/legality-of-web-scraping-vs-normal-use">here</a> for details).</p>
+
+<p>If you are on the "dark side of the law" and don't care if that's illegal or not, you could use something like <a href="http://luminati.io/" rel="noreferrer">http://luminati.io/</a> to use IP adresses of real people.</p>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Selenium WebDriver findElement(By.xpath()) not working for me </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<pre><code>element = findElement(By.xpath("//*[@test-id='test-username']");
+element = findElement(By.xpath("//input[@test-id='test-username']");
+</code></pre>
+
+<p>(*) - any tagname</p>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Get current page URL from a firefox sidebar extension </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<pre><code>window.top.getBrowser().selectedBrowser.contentWindow.location.href;
+</code></pre>
+
+<p>might work, otherwise I think you need to use:</p>
+
+<pre><code>var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                   .getInterface(Components.interfaces.nsIWebNavigation)
+                   .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+                   .rootTreeItem
+                   .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                   .getInterface(Components.interfaces.nsIDOMWindow);
+
+mainWindow.getBrowser().selectedBrowser.contentWindow.location.href;
+</code></pre>
+     </div> </div>  <div align="left" style="color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px";> Screen Scraping from a web page with a lot of Javascript [closed] </div>  <div align="left" style="background: #0F0F0F; color: #BBBBBB; width: 90%;"> <div class="post-text" itemprop="text">
+<p>You may consider using <a href="http://htmlunit.sourceforge.net" rel="noreferrer">HTMLunit</a>
+It's a java class library made to automate browsing without having to control a browser, and it integrates the Mozilla Rhino Javascript engine to process javascript on the pages it loads. There's also a JRuby wrapper for that, named Celerity. Its javascript support is not really perfect right now, but if your pages don't use many hacks things should work fine the performance should be way better than controlling a browser. Furthermore, you don't have to worry about cookies being persisted after your scraping is over and all the other nasty things connected to controlling a browser (history, autocomplete, temp files etc).</p>
+     </div> </div>  </div> 

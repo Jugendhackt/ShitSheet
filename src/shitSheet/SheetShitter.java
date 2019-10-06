@@ -27,7 +27,7 @@ public class SheetShitter {
 			e.printStackTrace();
 		}
 		
-		String s = "<div align=\"right\">";
+		String s = "<div align=\"right\" style=\"background: #0F0F0F; \">";
 		for (int i = 1; i < fileArray.size() - 1; i++) {
 			System.out.println(i);
 			String entry = "";
@@ -38,17 +38,17 @@ public class SheetShitter {
 				e.printStackTrace();
 			}
 			if(entry.split("<\\|>").length >= 2) {
-				s = s + "<div align=\"left\">" + entry.split("<\\|>")[0] + "</div>" + "<div align=\"left\" style=\"width:80%;\">" + entry.split("<\\|>")[1] + "</div>";
+				s = s + " <div align=\"left\" style=\"color: #EEEEEE; text-shadow: 2px 1px #555555; font-size: 30px\";> " + entry.split("<\\|>")[0] + " </div> " + " <div align=\"left\" style=\"background: #0F0F0F; color: #BBBBBB; width: 90%;\"> " + entry.split("<\\|>")[1] + " </div> </div> ";
 			}
 			//System.out.println(i + entry.split("\\|")[1]);
 			
 		}
 			
 		
-		s = s + "</div>";
+		s = s + " </div> ";
 		//s = s.replaceAll("\"", "penis");
-		System.out.println(s);
-		Charset charset = Charset.forName("US-ASCII");
+		//System.out.println(s);
+		Charset charset = Charset.forName("UTF-8");
 		try (BufferedWriter writer = Files.newBufferedWriter(shitSheet, charset)) {
 		    writer.write(s, 0, s.length());
 			System.out.println(s.length());
